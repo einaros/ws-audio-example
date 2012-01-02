@@ -1,0 +1,16 @@
+{
+  "author": "",
+  "name": "ws-audio-example",
+  "version": "0.0.0",
+  "repository": {
+    "url": ""
+  },
+  "engines": {
+    "node": "~0.6.6"
+  },
+  "dependencies": {
+    "ws": "latest",
+    "express": "latest"
+  },
+  "devDependencies": {}
+}

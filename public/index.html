@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script language="javascript">
+      var ctx = new webkitAudioContext();
+      function playSound(arrBuff) {
+        var src = ctx.createBufferSource();
+        src.buffer = ctx.createBuffer(arrBuff, false);
+        src.looping = false;
+        src.connect(ctx.destination);
+        src.noteOn(0);
+      }
+      var ws = new WebSocket('ws://localhost:8080/data');
+      ws.binaryType = 'arraybuffer';
+      ws.onmessage = function(e) {
+        console.log(e.data.byteLength);
+        playSound(e.data);
+      }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
